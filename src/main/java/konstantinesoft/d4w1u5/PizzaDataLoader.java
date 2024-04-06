@@ -14,8 +14,15 @@ public class PizzaDataLoader {
     @Bean
     CommandLineRunner initDatabase(PizzaRepository repository) {
         return args -> {
-            logger.info("Preloading " + repository.save(new Pizza("Margherita", "Medium")));
-            logger.info("Preloading " + repository.save(new Pizza("Pepperoni", "Large")));
+
+            Pizza pizza1 = Menu.creaPizzaMargheritaPiccola();
+            Pizza pizza2 = Menu.creaPizzaMargheritaMedia();
+            Pizza pizza3 = Menu.creaPizzaMargheritaGrande();
+
+
+            repository.save(pizza1);
+            repository.save(pizza2);
+            repository.save(pizza3);
 
             logger.info("Loaded Pizzas:");
             repository.findAll().forEach(pizza -> logger.info(pizza.getName() + ", " + pizza.getSize()));

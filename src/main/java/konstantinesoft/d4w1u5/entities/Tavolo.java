@@ -19,18 +19,15 @@ public class Tavolo {
     @OneToMany(mappedBy = "tavolo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Ordine> ordini = new ArrayList<>();
 
-    // Constructor excluding id and ordini list
     public Tavolo(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
     }
 
-    // Convenience method to add an Ordine to the Tavolo
     public void addOrdine(Ordine ordine) {
         ordini.add(ordine);
         ordine.setTavolo(this);
     }
 
-    // Convenience method to remove an Ordine from the Tavolo
     public void removeOrdine(Ordine ordine) {
         ordini.remove(ordine);
         ordine.setTavolo(null);

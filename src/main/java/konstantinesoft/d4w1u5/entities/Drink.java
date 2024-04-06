@@ -9,7 +9,7 @@ public class Drink extends Alimento {
 
     private String type;
 
-    // Constructors
+
     public Drink() {
     }
 
@@ -18,7 +18,6 @@ public class Drink extends Alimento {
         this.type = type;
     }
 
-    // Getters and setters
     public String getType() {
         return type;
     }
