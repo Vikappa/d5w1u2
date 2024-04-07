@@ -39,8 +39,6 @@ public class Pizza extends Alimento {
     public void addTopping(Topping topping) {
         this.toppings.add(topping);
         topping.getPizzas().add(this);
-        System.out.println("Pizza: " + this.name + " - " + this.getCalories());
-        System.out.println("Topping: " + topping.getName() + " - " + topping.getCalories());
         this.price += topping.getPrice();
         this.calories += topping.getCalories();
     }

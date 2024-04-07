@@ -78,7 +78,7 @@ public class Menu {
         Topping pomodoro = new Topping("Pomodoro", 56, 1.2);
         Topping mozzarella = new Topping("Mozzarella", 92, 0.69);
         Topping prosciutto = new Topping("Prosciutto", 56, 1.2);
-        Topping ananas = new Topping("ananas", 110, 1.2);
+        Topping ananas = new Topping("Ananas", 110, 1.2);
         Pizza pizzaHawaiiPiccola = new Pizza();
         pizzaHawaiiPiccola.setName("Hawaii piccola");
         pizzaHawaiiPiccola.setPizzaSize(Pizza.PIZZASIZE.PICCOLA);
@@ -96,7 +96,7 @@ public class Menu {
         Topping pomodoro = new Topping("Pomodoro", 56, 1.2);
         Topping mozzarella = new Topping("Mozzarella", 92, 0.69);
         Topping prosciutto = new Topping("Prosciutto", 56, 1.2);
-        Topping ananas = new Topping("ananas", 110, 1.2);
+        Topping ananas = new Topping("Ananas", 110, 1.2);
         Pizza pizzaHawaiiPiccola = new Pizza();
         pizzaHawaiiPiccola.setName("Hawaii piccola");
         pizzaHawaiiPiccola.setPizzaSize(Pizza.PIZZASIZE.MEDIO);
@@ -113,7 +113,7 @@ public class Menu {
         Topping pomodoro = new Topping("Pomodoro", 56, 1.2);
         Topping mozzarella = new Topping("Mozzarella", 92, 0.69);
         Topping prosciutto = new Topping("Prosciutto", 56, 1.2);
-        Topping ananas = new Topping("ananas", 110, 1.2);
+        Topping ananas = new Topping("Ananas", 110, 1.2);
         Pizza pizzaHawaiiPiccola = new Pizza();
         pizzaHawaiiPiccola.setName("Hawaii piccola");
         pizzaHawaiiPiccola.setPizzaSize(Pizza.PIZZASIZE.GRANDE);

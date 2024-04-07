@@ -23,4 +23,13 @@ public class Drink extends Alimento {
     public void setSize(double size) {
         this.drink_size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "name='" + name + '\'' +
+                ", calories=" + calories +
+                ", price=" + price +
+                '}';
+    }
 }

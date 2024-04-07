@@ -27,4 +27,13 @@ public class Topping extends Alimento {
     public Topping(String name, double calories, double price) {
         super(name, calories, price);
     }
+
+    @Override
+    public String toString() {
+        return "Topping{" +
+                "name='" + name + '\'' +
+                ", calories=" + calories +
+                ", price=" + price +
+                '}';
+    }
 }
