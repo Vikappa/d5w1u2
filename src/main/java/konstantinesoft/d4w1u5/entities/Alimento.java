@@ -18,17 +18,34 @@ public abstract class Alimento {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ordine_id")
-    private Ordine ordine;
+    protected Ordine ordine;
 
-    @Setter
-    @Getter
-    private String name;
+    protected String name;
 
+    protected double calories;
+
+    protected double price;
     protected Alimento() {
+        this.calories = 0;
+        this.price = 0;
     }
 
     protected Alimento(String name) {
+        this.calories = 0;
+        this.price = 0;
         this.name = name;
     }
 
+    public Alimento(String name, double calories, double price) {
+        this.name = name;
+        this.calories = calories;
+        this.price = price;
+    }
+
+    public Alimento(Ordine ordine, String name, double calories, double price) {
+        this.ordine = ordine;
+        this.name = name;
+        this.calories = calories;
+        this.price = price;
+    }
 }

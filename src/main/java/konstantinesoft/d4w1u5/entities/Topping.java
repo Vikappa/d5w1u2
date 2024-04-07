@@ -17,13 +17,14 @@ import java.util.Set;
 @NoArgsConstructor
 public class Topping extends Alimento {
 
-    private String flavor;
-
     @ManyToMany(mappedBy = "toppings")
     private Set<Pizza> pizzas = new HashSet<>();
 
     public Topping(String name, String flavor) {
         super(name);
-        this.flavor = flavor;
+    }
+
+    public Topping(String name, double calories, double price) {
+        super(name, calories, price);
     }
 }
