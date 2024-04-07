@@ -1,6 +1,8 @@
 package konstantinesoft.d4w1u5;
-import konstantinesoft.d4w1u5.DAO.PizzaRepository;
+import konstantinesoft.d4w1u5.DAO.AlimentoRepository;
+import konstantinesoft.d4w1u5.entities.Drink;
 import konstantinesoft.d4w1u5.entities.Pizza;
+import konstantinesoft.d4w1u5.entities.Topping;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.CommandLineRunner;
@@ -12,20 +14,28 @@ public class PizzaDataLoader {
     private static final Logger logger = LogManager.getLogger(PizzaDataLoader.class);
 
     @Bean
-    CommandLineRunner initDatabase(PizzaRepository repository) {
+    CommandLineRunner initDatabase(AlimentoRepository foodRepository) {
         return args -> {
 
             Pizza pizza1 = Menu.creaPizzaMargheritaPiccola();
-            Pizza pizza2 = Menu.creaPizzaMargheritaMedia();
-            Pizza pizza3 = Menu.creaPizzaMargheritaGrande();
+            Pizza pizza2 = Menu.creaPizzaDiavolaGrande();
+            Pizza pizza3 = Menu.creaPizzaHawaiiMedia();
+            Topping topping1 = Menu.creaMozzarella();
+            Topping topping2 = Menu.creaCipolla();
+            Drink drink = Menu.creaVino();
 
 
-            repository.save(pizza1);
-            repository.save(pizza2);
-            repository.save(pizza3);
+            foodRepository.save(pizza1);
+            foodRepository.save(pizza2);
+            foodRepository.save(pizza3);
+            foodRepository.save(topping1);
+            foodRepository.save(topping2);
+            foodRepository.save(drink);
 
+
+            logger.info("------------------------------------------------------------------------");
             logger.info("Loaded Pizzas:");
-            repository.findAll().forEach(pizza -> logger.info(pizza.getName() + ", " + pizza.getSize()));
+            foodRepository.findAll().forEach(pizza -> logger.info(pizza.toString()));
         };
     }
 }

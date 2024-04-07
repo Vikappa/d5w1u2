@@ -7,22 +7,20 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("DRINKS")
 public class Drink extends Alimento {
 
-    private String type;
-
+    private double drink_size;
 
     public Drink() {
     }
 
-    public Drink(String name, String type) {
+    public Drink(String name) {
         super(name);
-        this.type = type;
     }
 
-    public String getType() {
-        return type;
+    public double getSize() {
+        return drink_size;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setSize(double size) {
+        this.drink_size = size;
     }
 }
