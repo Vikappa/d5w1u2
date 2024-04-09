@@ -2,20 +2,20 @@ package konstantinesoft.d4w1u5.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter
 public class Ordine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String customerName;
+    private LocalDateTime orario_ricezione;
 
     @OneToMany(mappedBy = "ordine", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Alimento> alimenti = new ArrayList<>();
@@ -33,5 +33,9 @@ public class Ordine {
     public void removeAlimento(Alimento alimento) {
         alimenti.remove(alimento);
         alimento.setOrdine(null);
+    }
+
+    public Ordine() {
+        this.orario_ricezione = LocalDateTime.now();
     }
 }

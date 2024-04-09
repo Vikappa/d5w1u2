@@ -16,7 +16,7 @@ public class Tavolo {
 
     private int numberOfSeats;
 
-    @OneToMany(mappedBy = "tavolo", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "tavolo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Ordine> ordini = new ArrayList<>();
 
     public Tavolo(int numberOfSeats) {
