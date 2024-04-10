@@ -32,5 +32,12 @@ public class Tavolo {
         ordini.remove(ordine);
         ordine.setTavolo(null);
     }
+
+    public double calcolaConto(double costoCoperto){
+        double costoCopertoTotale = this.getNumberOfSeats()* costoCoperto;
+        double costoAlimenti = 0;
+        costoAlimenti = this.ordini.get(0).getAlimenti().stream().mapToDouble(Alimento::getPrice).sum();
+        return costoCopertoTotale + costoAlimenti;
+    }
 }
 

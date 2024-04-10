@@ -20,10 +20,15 @@ public class Ordine {
     @OneToMany(mappedBy = "ordine", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Alimento> alimenti = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tavolo_id")
     private Tavolo tavolo;
 
+    private STATO_ORDINE statoOrdine;
+
+    public enum STATO_ORDINE {
+        IN_CORSO, IN_PREPARAZIONE, SERVITO;
+    }
 
     public void addAlimento(Alimento alimento) {
         alimenti.add(alimento);
@@ -37,5 +42,10 @@ public class Ordine {
 
     public Ordine() {
         this.orario_ricezione = LocalDateTime.now();
+        this.statoOrdine = STATO_ORDINE.IN_CORSO;
+    }
+
+    public String getStatoOrdine() {
+        return this.statoOrdine.toString();
     }
 }
